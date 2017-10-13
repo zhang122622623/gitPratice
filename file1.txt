@@ -13,3 +13,6 @@ try again;
 
 twice times;
 
+
+
+this time not use fast Forward style to merge branch; 
