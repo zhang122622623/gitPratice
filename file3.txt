@@ -2,3 +2,4 @@ chang is done on person2;
 
 this is other man do somechange;
 
+show color;
