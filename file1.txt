@@ -18,4 +18,7 @@ twice times;
 this time not use fast Forward style to merge branch; 
 
 
-新的分支；新的修改
+新的分支；新的修改；
+
+
+分支上的修改；
