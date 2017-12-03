@@ -18,6 +18,13 @@ twice times;
 this time not use fast Forward style to merge branch; 
 
 
+<<<<<<< HEAD
 新的分支；新的修改
 
 修改master;
+=======
+新的分支；新的修改；
+
+
+分支上的修改；
+>>>>>>> dev2
