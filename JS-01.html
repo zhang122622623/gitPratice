@@ -18,7 +18,16 @@
             const inObj = document.getElementById('aqi-input');
             var value = inObj.value;
             const displayObj = document.getElementById('aqi-display');
-            displayObj.innerHTML = value
+            displayObj.innerHTML = value;
+
+            var request =  new XMLHttpRequest();
+            request.open('GET','local:3000/users');
+            request.setRequestHeader('Content-Type','application/json');
+            request.onreadystatechange = function () {
+                console.log(request.responseText);
+            };
+            request.send(null);
+
         }
     })();
 
