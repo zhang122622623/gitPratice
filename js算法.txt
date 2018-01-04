@@ -165,6 +165,38 @@ function searHalf(arr,val){
 }
 
 
+11¡¢½×³Ë
+function factorial(n){
+  let result ='';
+ if(typeof n ==='number'&& n>0){
+    result=1;
+   for(let i=1;i<n+1;i++){
+     result = result*i;
+   }
+ }
+ return result;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
