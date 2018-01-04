@@ -1,0 +1,180 @@
+1、数组去重：
+ 渣：
+ function filter(arr){
+   let newArr = [],length = arr.length;
+   for(let i=0;i<length;i++){
+       let val = arr[i],flag=1;
+       for(let j=i+1;j<length;j++){
+         if(val===arr[j]){ flag=0;break;}      
+       }    
+       if(flag===1){newArr.push(val);}
+   }   
+   return newArr;   
+ }
+ 好：（利用key来进行筛选）
+let unique =  function(arr){
+   let hash={};
+   let data=[];
+    for (let i=0;i<arr.length;i++){
+         if (!hash[arr[i]])  {
+               hash[arr[i]]=true;
+                data.push(arr[i]);
+      }      
+   }
+   return data
+
+}
+
+
+2、统计字符次数（ok，与答案一致）
+
+function staticsis(str){
+  let obj ={},str1 =str.split(''),length = str1.length,char ='',count=1;
+  if(length>0){
+   for(let i=0;i<length;i++){
+    let val = str1[i];
+    obj[val] =(obj[val])? ++obj[val]:1;
+   }  
+   for(var key in obj){
+     if(obj[key]>=count){
+       count = obj[key];
+       char = key;
+     }
+   }
+  }
+  return char;
+}
+staticsis('ssasaswwqwsssssss123')
+
+
+3、冒泡排序(升序):比较相邻的数,依次找出较大的数自后向前放置；（OK）
+function popSort(arr){
+  let length = arr.length;
+  if(length>1){
+    //n个数的数组需要排序（n-1）轮
+    for(let i=0;i<length-1;i++){
+       //每一轮比较的次数逐次递减
+       for(let j=0;j<length-1-i;j++){
+         let a =0;
+         if(arr[j]>arr[j+1]){
+          a =arr[j]; 
+  	  arr[j] =arr[j+1]; 
+ 	  arr[j+1] =a; 
+         }
+       }
+    } 
+  }
+  return arr; 
+}
+
+4、快速排序：1、找基准数（随机数找），2、遍历数组，小于基准放left，大于放right；3、对left和right进行递归
+function quickSort(arr){
+ let length =arr.length;
+ if(length<=1){ return arr;}
+ //找到基准点并删除该数
+ let index = Math.floor(length/2), base= arr.splice(index,1)[0],left=[],right=[];
+ //把数组按基准点分成两个子数组
+ for(let i=0;i<arr.length;i++){
+   let val = arr[i];
+   if(val>base){ right.push(val);} 
+   else{ left.push(val);} 
+ } 
+ //递归
+ return quickSort(left).concat([base],quickSort(right));
+}
+
+
+5、不借助临时变量进行两个变量交换(数学里的交换律与结合律)
+function swap(a,b){
+  b = b-a;
+  a = a+b; //a=a+(b-a)=b;
+  b = a-b; //b=a-b=b-(b-a)=a
+}
+
+6、斐波那契数列
+function fibo(n){
+ let arr=[];
+ if(n>0){
+  arr[0] =0;
+  if(n==1){return arr;}
+  arr[1] =1;
+  for(let i=2;i<n;i++){
+   arr[i] = arr[i-1]+arr[i-2];
+  }
+ }
+ return arr;
+}
+
+7、数组最大差值(js中的Math迅速定位)
+function maxProfit(arr){
+ let length = arr.length,max=0,min=0;
+ if(length>1){
+    max = Math.max.apply(null,arr);
+    min= Math.min.apply(null,arr);
+ }
+  return max-min;
+}
+
+8、随机生成字符串
+ function randomStr(n){
+  let str='abcdefghijkmnopqrstuvwxyz9876543210',newStr='',m =str.length;
+  for(let i=0;i<n;i++){
+    newStr+=str.charAt(Math.floor(Math.random()*m))
+    }
+    return newStr;
+  }
+
+9、归并排序:将数组分为两个子数组，重复此操作直到所有的子数组都只含有一个元素，然后从底部开始两两合并；合并与分割同时进行；
+
+ function mergeSort(arr){
+  let length = arr.length;
+  if(length<=1|| (!Array.isArray(arr))){return arr;}
+  //分割数组
+  let mid = Math.floor(length/2);
+  let left = arr.slice(0,mid);
+  let right = arr.slice(mid);
+  return mergeArr(mergeSort(left),mergeSort(right)) ;
+}
+ //合并数组
+ function mergeArr(left,right){
+ let result =[];
+ while(left.length>0&&right.length>0){
+   if(left[0]<right[0]){
+    result.push(left.shift());
+   }else{
+    result.push(right.shift());
+   } 
+  }
+  return result.concat(left,right);
+}
+
+let array1 = [10,2,1,7,12,5,9,0];
+console.log(mergeSort(array1))//返回[0, 1, 2, 5, 7, 9, 10, 12]
+
+
+10、二分查找（非递归）:传入的数组为有序数组
+function searHalf(arr,val){
+ let length = arr.length,low =0,high=length-1;
+ while(low<=high){
+  let mid = Math.floor((high+low)/2);
+  if(arr[mid]===val){return mid;}
+  else if(arr[mid]<val){low =mid+1;}
+  else if(arr[mid]>val){high=mid-1;}
+ }
+ return -1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
