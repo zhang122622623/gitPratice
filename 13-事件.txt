@@ -1,0 +1,19 @@
+1、事件流;事件冒泡、事件捕获、DOM事件流（分为三个阶段捕获阶段、处于目标阶段、冒泡阶段）
+
+2、事件处理程序的添加：
+  HTML事件处理程序：将事件直接绑定到HTML代码上；
+  DOM0级事件处理程序：获取元素，将事件处理程序直接绑定到元素的事件属性上；
+  DOM2级事件处理程序：，先获取元素，调用两个方法addEventListener()和removeEventListener()添加处理程序;
+  这两个函数接收三个参数：事件名、事件处理程序函数以及布尔值（true表示捕获阶段调用，false为冒泡阶段）；这种方式的优点在于
+  可以为一个事件同时添加多个处理程序，按顺序执行；若添加的是匿名函数，则无法通过后者删除； 
+
+  IE事件处理程序：采用atachEvent()和detachEvent();接收两个参数：事件名(与DOM2级‘click’不一样，要用‘onclick’)和处理程序;
+  处理程序会被添加到冒泡阶段；与DOM0级区别是这种方式添加的事件处理程序是在全局作用域中运行，(this===window)
+
+3、事件对象：event对象，包含所有与事件相关的信息，兼容DOM的浏览器会将event对象传入事件处理程序；
+ 常用属性与方法：event.target:目标元素；event.type:事件类型；preventDefault():阻止默认行为；stopPropagation():停止传播（捕获或冒泡）
+ 
+IE的事件对象：依据事件添加的方式不一致，有不同的使用方式；
+   采用DOM0级方式添加时，event对象是作为window对象的一个属性访问；
+  使用attachEvent()方式添加，则会传入event对象；采用HTML添加，则会有event变量；
+对应属性：event.srcElement:目标元素；event.type:事件类型；returnValue:设为false可组织默认行为；cancelBubble:取消冒泡； 

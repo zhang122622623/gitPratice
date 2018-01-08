@@ -1,0 +1,108 @@
+一、节点
+1、文档节点-Document,唯一子元素<html>-文档元素，文档最外层元素；
+2、Node节点类型，12种，由定义的Node接口访问其属性（除IE外均支持，IE仅支持对应的数值）
+3、元素节点，nodeName 为标签名，nodeValue始终为null;
+4、childNodes属性，包含一个nodeList类数组对象，采用方括号法和item()方法访问子节点；
+可用 Array.prototype.slice()方法将其转换为数组；
+5、parentNode属性，previousSibling属性：前一个节点，nextSibling:下一个，若不存在，其值为null;firstChild与lastChild属性；
+ownerDocument:指向文档节点；
+6、节点操作：
+ appendChild(newNode):在childNodes末尾添加节点，返回新增的节点；
+ insertBefore(newNode,nodex):在特定的节点前插入某节点，返回插入节点；
+ replaceChild(newNode,nodex):替换节点，返回新节点；
+ removeChild(nodex）:删除节点，删除或替换后的节点仍在文档中，不过已经没有自己的位置；
+
+以上方法必须先获取父节点，不支持子节点的节点无法使用；
+
+cloneNode():接收布尔值，true为深复制，复制节点本身预期子节点；false只复制节点本身；
+复制方法仅复制节点和其上面的特性，javascript属性不复制，IE除外，IE将复制其事件处理程序；
+
+normalize():处理文本节点，删除空文本节点，合并相邻文本节点；
+
+二、Document类型
+7、Document类型：表示整个文档；浏览器中，Document对象是HTMLdocument类型的一个实例，表示整个HTML页面，
+并且其是window对象的属性；document节点：nodeType:9;nodeName:'#document';nodeValue:null;
+8、Document节点的子节点有DocumentType/Element/ProcessingInstruction或Comment
+属性：documentElement：指向<html>元素；body属性：指向<body>元素；所有浏览器均支持；
+doctype属性：访问<！DOCTYPE>标签的信息，各浏览器处理方式不一致；
+不同浏览器对注释的处理方式也不一样，因此这两个属性作用有限；
+9、文档信息：document对象是HTMLDocument的一个实例，因此其具有文档属性；
+title:<title>元素中的文本，可以读写这个属性值并反映在浏览器标题栏；
+URL/domain:域名（页面包含来自其他子域的框架时，将域名设置一致可解决跨域问题）/referrer:来源页面；
+10、方法：
+getElementById():IE8及之前的版本ID不区分大小写；
+getElementsByTagName():在HTML文档中，返回HTMLCollection对象，可以按索引值访问和按名称访问；传入“*”返回所有元素；
+getElementByName():只有HTMLdocument类型才有的方法；
+11、特殊集合：document.anchors:包含所有带name特性的<a>元素;document.links:包含所有带href特性的<a>元素;
+document.forms/document.imgs等
+12、文档写入：
+write():在页面被呈现的过程中直接向页面输出内容；
+writeln():写入时加换行（\n);
+open()/close():打开和关闭网页输出流，若在网页加载过程使用上述方法，则不需要这两个方法；
+
+三、Element类型
+1、nodeType:1; nodeValue:null; nodeName:标签名；
+  tagName:返回大写标签名；
+2、元素特性操作：
+getAttribute("attr"):获取特定特性；特性还可以通过DOM元素本身的属性来访问，有两类特性比较特殊：
+  一是style:使用方法获取的是CSS文本；使用属性访问获取的是对象；
+  二是事件处理程序：使用属性获取的是相应代码的字符串；属性返回的是js函数；
+一般都采用属性访问的方式；
+
+setAttribute('attr','value'):设置的特性名一律转为小写；
+  也可以采用给属性赋值的方式来设置特性的值，若设置自定义属性则不会成为元素的特性（IE除外）；
+
+removeAttribute('attr'):删除特性，不仅删除特性的值，还会删除该特性；
+3、attributes属性：包含一个NamedNodeMap,包含所有的特性值，包括一些方法，但并不常用；
+4、创建元素：document.createElement();
+子节点：childNodes属性；除IE外，其余浏览器会把<li>元素之间的空白当做一个文本节点，
+ 因此操作元素前最好对其类型做判断；
+
+
+四、Text类型
+1、nodeType:3; nodeValue:节点内的文本; nodeName:‘#text’；可通过nodeValue和data属性访问节点内文本；
+文本节点的length属性包含着节点中字符的数目，
+2、document.createTextNode()
+3、规范化文本节点：normalize();分割文本节点：splitText():返回新文本节点，包含分割后从开始位置到当前位置的所有文本；
+
+4、Comment类型:注释，nodeType:8;
+  DocumentFragment类型:文档片段，可用来保存可能会添加到文档中的节点，用于针对文档的DOM操作，用于避免反复渲染；
+
+document.createDocumentFragment();创建文档片段；
+
+5、Attr类型：元素的特性，nodeType:2; nodeValue:特性的值; nodeName:特性名称；
+尽管这也是节点，但却不认为其是文档树的一部分；
+
+
+6、NodeList、NameNodeMap、HTMLCollection：动态存储文档节点；
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
