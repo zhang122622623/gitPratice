@@ -1,5 +1,5 @@
-ÕâÊÇµÚÒ»¸öÎÄ¼þ£»
-ÕâÊÇµÚÒ»´ÎÐÞ¸Ä£»
+è¿™æ˜¯ç¬¬ä¸€ä¸ªæ–‡ä»¶ï¼›
+è¿™æ˜¯ç¬¬ä¸€æ¬¡ä¿®æ”¹ï¼›
 the seceond addfy;
 the third time,change file,for js ; oop;
 
@@ -18,11 +18,14 @@ twice times;
 this time not use fast Forward style to merge branch; 
 
 
-ÐÂµÄ·ÖÖ§£»ÐÂµÄÐÞ¸Ä
+æ–°çš„åˆ†æ”¯ï¼›æ–°çš„ä¿®æ”¹
 
-ÐÞ¸Ämaster;
+ä¿®æ”¹master;
 
-·ÖÖ§ÉÏµÄÐÞ¸Ä£»
+åˆ†æ”¯ä¸Šçš„ä¿®æ”¹ï¼›
 
 
  this is for dev1 branch;
+
+
+ this change is in remote res;
