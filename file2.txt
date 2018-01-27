@@ -19,3 +19,7 @@ this branch change for resolve bug101;
 
 
 masterÉÏµÄĞŞ¸Ä
+
+
+  this is  for merge conflict do something  in master
+
