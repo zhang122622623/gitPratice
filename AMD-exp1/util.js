@@ -1,12 +1,16 @@
 define(function(){
-    return {
+   var util =  {
         getFormateDate:function(date,type){
-          if(type===1){
-              return '2018-1-28'
-          }
-          if(type===2){
-              return '2018年1月28日'
-          }
+            var y = date.getFullYear();
+            var m = date.getMonth()+1;
+            var d = date.getDate();
+            if(type===1){
+                return y+' - '+m+' - '+d;
+            }
+            if(type===2){
+               return y+' 年 '+m+' 月 '+d+' 日';
+            }
         }
-    }
+    };
+    return util;
 });
