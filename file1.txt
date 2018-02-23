@@ -30,4 +30,5 @@ this time not use fast Forward style to merge branch;
 
  dosomething in local res,and this change is in remote res;
 
-  this is for master  branch;
+  this is for master  branch;and this is for dev2 branch;
+
