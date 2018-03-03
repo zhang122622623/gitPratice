@@ -4,6 +4,9 @@ tirst time change file2.text,just for once;
   add this file,not commit;
 
 
+ check the commit is correct
+
+
 change something
 
   this change is do on the master;
@@ -18,7 +21,7 @@ this branch change for resolve bug101;
 
 
 
-master上的修改
+master锟较碉拷锟睫革拷
 
 
  this is  for merge conflict do something  in master and  in the feature1 branch ;
