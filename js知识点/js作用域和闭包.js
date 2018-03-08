@@ -37,3 +37,38 @@ A.printName(); //'zhangsan' this===A
 A.printName.call(B); //'lisi' this===B
 var f1 = A.printName;
 f1(); //'wangwu' this===window
+
+
+
+/*创建10个a标签，绑定事件，点击返回对应的编号---闭包*/
+var i;
+for(i=0;i<10;i++){
+    (function (i) {
+        var a = document.createElement('a');
+        a.innerHTML = i+'<br>';
+        a.addEventListener('click',function (e) {
+            e.preventDefault();
+            alert(i);
+        });
+        document.body.appendChild(a);
+    })(i)
+}
+
+
+/*闭包在函数中的应用---封装变量*/
+
+function isFirstLoad() {
+    var _list = [];
+    return function (value) {
+        if(_list.indexOf(value)>=0){
+            return false;
+        }else{
+            _list.push(value);
+            return true;
+        }
+    }
+}
+var firstLoad = isFirstLoad();
+firstLoad('zhangsan'); // true
+firstLoad('zhangsan'); //false
+firstLoad('lisi');  //true
