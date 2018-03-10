@@ -30,3 +30,29 @@
 * 2、nodeType--返回数字，节点类型
 * 3、nodeName--返回字符串，节点名称
 * */
+
+
+
+
+/*BOM的常用考点
+* 一、navigator
+*用于浏览器的类型检测：userAgent
+*
+*二、screen
+*screen.width和screen.height
+*
+*三、location
+* 例如：网址https://www.medtrum.com/login/?country=CN#uid=345
+* location.href；完整的url 如上，
+* location.protocol:协议 --https
+* location.host:域名--www.medtrum.com
+* location.pathname:路径--/login
+* location.search:url的参数--country=CN
+* location.hash：#后面的内容--uid=345
+*
+*四、history
+* history.go(number/url):
+* history.back():history.go(-1)
+* history.forward():history.go(1)
+*
+* */
