@@ -55,4 +55,14 @@
 * history.back():history.go(-1)
 * history.forward():history.go(1)
 *
+*
+*五、Javascript刷新页面的几种方法：
+*1 history.go(0)
+2 location.reload()
+3 location=location
+4 location.assign(location)
+5 document.execCommand('Refresh')
+6 window.navigate(location)
+7 location.replace(location)
+8 document.URL=location.href
 * */
