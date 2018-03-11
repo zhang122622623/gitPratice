@@ -47,5 +47,5 @@ typeof console.log;//function
 /*js中的内置对象
  * Math
  * JSON:一种数据格式，也是JS对象；两个方法：parse和stringify
- * /
-
+ *
+*/

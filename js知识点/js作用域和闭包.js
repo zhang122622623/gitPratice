@@ -5,7 +5,7 @@
 * */
 
 console.log(a)
-var a = 100;
+var a = 100;a
 
 fn('zhangsan555')
 function fn(name) {

@@ -4,7 +4,6 @@ btn1.addEventListener('click',function (event) {
     alert('clicked!');
 });
 
-
 /*通用绑定事件*/
 var bindEvent = function (elem,type,fn) {
     elem.addEventListener(type,fn);
@@ -14,9 +13,6 @@ bindEvent(btn2,'click',function (event) {
     alert('clicked!');
     event.preventDefault();
 });
-
-
-
 
 /*完善事件绑定
 * 事件‘代理’---即将同一类元素的事件绑定在父节点，通过事件冒泡触发；
