@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标拖曳</title>
+    <style type="text/css">
+        #wrap{
+            height: 500px;
+            width:600px ;
+            margin:0 auto;
+            background: #000;
+            position: relative;
+        }
+        #dragObj{
+            height: 60px;
+            width:80px ;
+            background:lightgreen;
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="dragObj"></div>
+</div>
+<script>
+    window.onload = function () {
+        var wrap = document.getElementById('wrap');
+        var dragObj = document.getElementById('dragObj');
+        dragObj.onmousedown = drag;
+        function drag(event) {
+            event = event || window.event;
+            var reX=event.clientX-dragObj.offsetLeft;
+            var reY=event.clientY-dragObj.offsetTop;
+            //console.log(reX,reY,dragObj.offsetTop);
+            //获得left和top的最大值
+            var MX= wrap.offsetWidth-dragObj.offsetWidth;
+            var MY= wrap.offsetHeight-dragObj.offsetHeight;
+            document.onmousemove=function(event){
+                event = event || window.event;
+                var X=event.clientX-reX;
+                var Y=event.clientY-reY;
+                //console.log(X,Y)
+                if(X<0){X=0;}
+                else if(X>MX){X=MX;}
+                if(Y<0){Y=0;}
+                else if(Y>MY){Y=MY;}
+                dragObj.style.left=X +'px';
+                dragObj.style.top=Y +'px';
+            };
+            document.onmouseup=function(){
+                document.onmousemove=null;
+            }
+        }
+    };
+</script>
+</body>
+</html>
