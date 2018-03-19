@@ -1,6 +1,7 @@
 /*判断数组
 * 1、value instanceof Array
 * 2、Array.isArray(value)
+* 3、Object.prototype.toString.call() =>区别数组和对象的最好方法，，可区别suoyouleix
 * */
 
 
