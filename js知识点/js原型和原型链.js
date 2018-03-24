@@ -67,3 +67,8 @@ var  obj = new Elem('div1');
 obj.html('<p>javascript</p>').on('click',function(){
     alert('hello world')
 });
+
+
+/*instanceof 判断实例是否由某个构造函数生成
+* 判断的方式是：看Foo.prototype是否出现在f的原型链上(即是否等于 f._proto_,或者继续往上查找_proto_属性）
+* */
