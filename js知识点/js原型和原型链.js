@@ -12,6 +12,8 @@
 *4、引用类型的_proto_属性等于其构造函数的prototype属性；
 *5、查找引用类型的属性时，先查找其自身，自身没从其_proto_属性（其构造函数的prototype属性）
 * 指向的对象中查找，若还是没有，继续往上查找，直到Object的prototype属性值为止；
+*
+*  Object.prototype._proto_ = null =>防止死循环；
 * */
 /*示例*/
 function Foo(name){
@@ -29,7 +31,10 @@ f1.printName = function () {
 f1.printName();
 f1.alertName();
 
-/*for in会遍历自身和原型上所有的可枚举属性*/
+/*无论是构造函数中的this,还是原型对象上的this,指的都是实例自身*/
+/*for in会遍历自身和原型上所有的可枚举属性
+* 通过hasOwnProperty()可以判断是否是实例自身的属性
+* */
 
 
 /*new的过程
