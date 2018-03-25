@@ -1,0 +1,58 @@
+ul li{
+    float: left;
+    width: 180px;
+    border:1px solid #000;
+    padding-right: 20px;
+    z-index:100;
+    margin-bottom: 5px;
+    list-style: none;
+    position: relative;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px){
+    ul{
+        width: 182px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:992px) {
+    ul{
+        width: 364px;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1200px) {
+    ul{
+        width: 546px;
+    }
+}
+
+@media screen and (min-width:1200px){
+    ul{
+        width: 728px;
+    }
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    background: #fff url("1.jpg");
+    background-size: 110px 22px;
+    width:22px;
+    height:22px;
+    vertical-align: middle;
+}
+input[type="checkbox"]:checked {
+    background-position: -44px 0;
+}
+.delete-x {
+    position: absolute;
+    top:5px;
+    right: 5px;
+    width:14px;
+    height:14px;
+    line-height: 14px;
+    text-align: center;
+    z-index:1;
+    cursor: pointer;
+}
