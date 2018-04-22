@@ -27,3 +27,10 @@ master�ϵ��޸�
 
 
  this is  for merge conflict do something  in master and  in the feature1 branch ;
+
+
+
+ update the new change in local
+
+
+ what do you know this is for

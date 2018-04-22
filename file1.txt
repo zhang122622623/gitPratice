@@ -49,3 +49,6 @@ this is in the local branch
 
 the same
 
+this is the second change on the file1 of branch addFeature
+
+
