@@ -46,3 +46,6 @@ xhr.send(null);//执行
 *2、服务器端设置 http  responseHeader
 *3、proxy代理呢？
  */
+
+
+

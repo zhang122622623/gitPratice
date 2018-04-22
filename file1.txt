@@ -36,3 +36,12 @@ this time not use fast Forward style to merge branch;
 
   this is for master  branch;and this is for dev2 branch;
 
+
+
+
+merge this state
+
+
+
+this is in the local branch
+
