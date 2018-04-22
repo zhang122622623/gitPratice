@@ -38,9 +38,6 @@ this time not use fast Forward style to merge branch;
   
   the remote branch do something
   
-  
-
-
 
 
 merge this state
