@@ -46,3 +46,6 @@ merge this state
 
 this is in the local branch
 
+
+this is the second change on the file1 of branch addFeature
+
